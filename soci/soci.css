@@ -1,0 +1,63 @@
+/* Stili specifici per la pagina dei soci */
+.member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.member {
+    padding: 15px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.member:hover {
+    background-color: #ddd;
+}
+
+.member-details {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.member-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.member-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.events-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.events-button:hover {
+    background-color: #0056b3;
+}
+
+/* Aggiungi uno spazio tra la descrizione e il bottone */
+.member-description {
+    margin-bottom: 20px; /* Aggiungi uno spazio tra la descrizione e il bottone */
+}

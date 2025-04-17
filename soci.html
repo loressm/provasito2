@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I nostri soci</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Layout base -->
+    <link rel="stylesheet" href="soci/soci.css"> <!-- Stili specifici per la pagina soci -->
+    <script src="script.js" defer></script>
+    <script src="soci/soci.js" defer></script> <!-- Script specifici per la pagina soci -->
+    <!-- Font Awesome per l'icona del telefono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="produzioni.html" class="active">Produzioni</a></li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li><a href="soci.html">I nostri soci</a></li>
+                <li><a href="spazi.html">I nostri spazi</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li> <!-- Aggiunta l'icona del telefono -->
+            </ul>
+        </nav>
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>I Soci della Cooperativa</h2>
+            <p>Scopri i nostri soci, ognuno con il proprio talento e la propria passione per la cooperativa.</p>
+        </section>
+
+        <!-- Lista dei soci -->
+        <div class="member-list">
+            <!-- Socio 1 -->
+            <div class="member" onclick="toggleMemberDetails('member1')">
+                <h3>Minnie</h3>
+            </div>
+            <div class="member-details" id="member1">
+                <!-- Foto del socio -->
+                <div class="member-image">
+                    <img src="soci/minnie.jpg" alt="Minnie">
+                </div>
+
+                <!-- Nome del socio -->
+                <h2 class="member-name">Minnie</h2>
+
+                <!-- Informazioni di contatto -->
+                <div class="contact-info">
+                    <p><strong>Email:</strong> minnie@cooperativa.it</p>
+                    <p><strong>Telefono:</strong> 123-456-789</p>
+                </div>
+
+                <!-- Descrizione del socio -->
+                <div class="member-description">
+                    <p><strong>Un po' di storia:</strong> Minnie è una socia di lunga data, appassionata di arte e cultura. Con il suo entusiasmo contribuisce a rendere la cooperativa un punto di riferimento nella comunità.</p>
+                </div>
+
+                <!-- Bottone per spettacoli -->
+                <a href="eventi.html?socio=minnie">
+                    <button class="events-button">Scopri i miei spettacoli</button>
+                </a>
+            </div>
+
+            <!-- Socio 2 -->
+            <div class="member" onclick="toggleMemberDetails('member2')">
+                <h3>Orazio</h3>
+            </div>
+            <div class="member-details" id="member2">
+                <!-- Foto del socio -->
+                <div class="member-image">
+                    <img src="soci/orazio.jpg" alt="Orazio">
+                </div>
+
+                <!-- Nome del socio -->
+                <h2 class="member-name">Orazio</h2>
+
+                <!-- Informazioni di contatto -->
+                <div class="contact-info">
+                    <p><strong>Email:</strong> orazio@cooperativa.it</p>
+                    <p><strong>Telefono:</strong> 123-456-789</p>
+                </div>
+
+                <!-- Descrizione del socio -->
+                <div class="member-description">
+                    <p><strong>Un po' di storia:</strong> Orazio è un attivista impegnato nella crescita della cooperativa e nello sviluppo di progetti culturali in collaborazione con le istituzioni locali.</p>
+                </div>
+
+                <!-- Bottone per spettacoli -->
+                <a href="eventi.html?socio=orazio">
+                    <button class="events-button">Scopri i miei spettacoli</button>
+                </a>
+            </div>
+
+            <!-- Socio 3 -->
+            <div class="member" onclick="toggleMemberDetails('member3')">
+                <h3>Paperina</h3>
+            </div>
+            <div class="member-details" id="member3">
+                <!-- Foto del socio -->
+                <div class="member-image">
+                    <img src="soci/paperina.jpg" alt="Paperina">
+                </div>
+
+                <!-- Nome del socio -->
+                <h2 class="member-name">Paperina</h2>
+
+                <!-- Informazioni di contatto -->
+                <div class="contact-info">
+                    <p><strong>Email:</strong> paperina@cooperativa.it</p>
+                    <p><strong>Telefono:</strong> 123-456-789</p>
+                </div>
+
+                <!-- Descrizione del socio -->
+                <div class="member-description">
+                    <p><strong>Un po' di storia:</strong> Paperina è una delle socie più giovani, con una grande passione per il teatro e la musica. Da sempre impegnata nelle attività artistiche della cooperativa.</p>
+                </div>
+
+                <!-- Bottone per spettacoli -->
+                <a href="eventi.html?socio=paperina">
+                    <button class="events-button">Scopri i miei spettacoli</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nome Azienda - Tutti i diritti riservati</p>
+        <p class="social-text">Seguici sui social:</p>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="logofb.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="logoig.png" alt="Instagram" class="social-icon">
+        </a>
+    </footer>
+
+    <script src="soci/soci.js"></script>
+</body>
+</html>
