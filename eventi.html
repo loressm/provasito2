@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi - Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Caricamento di PapaParse prima di eventi.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="eventi/eventi.js" defer></script>  <!-- evento.js dopo PapaParse -->
+    
+    <!-- Aggiunta del file per l'Hamburger Menu -->
+    <script src="script.js" defer></script>  <!-- Aggiunto per gestire l'Hamburger Menu -->
+    
+    <!-- Font Awesome per l'icona del telefono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="produzioni.html">Produzioni</a></li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li><a href="soci.html">I nostri soci</a></li>
+                <li><a href="spazi.html">I nostri spazi</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li> <!-- Aggiunta l'icona del telefono -->
+            </ul>
+        </nav>
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Eventi</h2>
+            <p>Scopri gli eventi che ti interessano! Qui troverai tutti gli eventi filtrati in base ai tuoi criteri.</p>
+        </section>
+
+        <!-- Sezione per visualizzare gli eventi filtrati -->
+        <section id="eventi">
+            <h3>Eventi trovati:</h3>
+            <div id="events-list">
+                <!-- Gli eventi verranno visualizzati qui tramite JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nome Azienda - Tutti i diritti riservati</p>
+        <p class="social-text">Seguici sui social:</p>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="logofb.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="logoig.png" alt="Instagram" class="social-icon">
+        </a>
+    </footer>
+</body>
+</html>
