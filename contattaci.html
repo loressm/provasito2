@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css"> <!-- Aggiunto link al CSS dello slideshow -->
+    <script src="script.js" defer></script>
+    <script src="slideshow/script-slider.js" defer></script> <!-- Aggiunto link al JS dello slideshow -->
+    <!-- Font Awesome per l'icona del telefono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="produzioni.html">Produzioni</a></li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li><a href="soci.html">I nostri soci</a></li>
+                <li><a href="spazi.html">I nostri spazi</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li> <!-- Aggiunta l'icona del telefono -->
+            </ul>
+        </nav>
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <main>
+        <section class="intro">
+            <h2>Trova la nostra sede</h2>
+            <p>La nostra azienda si trova in una posizione strategica. Ecco la mappa per raggiungerci facilmente!</p>
+            <!-- Mappa Google -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5579.5590317432!2d11.546956675946962!3d45.63516542201584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778cca5ea1b5d0f%3A0xc3a9f940db249259!2sDedalofurioso%20soc.%20coop.!5e0!3m2!1sit!2sit!4v1740951578481!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nome Azienda - Tutti i diritti riservati</p>
+        <p class="social-text">Seguici sui social:</p>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="logofb.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="logoig.png" alt="Instagram" class="social-icon">
+        </a>
+    </footer>
+</body>
+</html>
