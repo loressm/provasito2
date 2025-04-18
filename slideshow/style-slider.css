@@ -1,0 +1,184 @@
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    top: 0;
+    padding-top: 0;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    height: 250px;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Frecce */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(169, 169, 169, 0.5); /* Grigio trasparente */
+    color: white; /* Colore del testo bianco */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Freccia a sinistra */
+.prev {
+    left: 10px; /* Posizionata sul bordo sinistro */
+}
+
+/* Freccia a destra */
+.next {
+    right: 10px; /* Posizionata sul bordo destro */
+}
+
+/* Play/Pause come cerchio */
+.play-pause {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(169, 169, 169, 0.5); /* Grigio trasparente */
+    color: white; /* Colore del testo bianco */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Rende il bottone un cerchio */
+    width: 50px;  /* Imposta la larghezza del cerchio */
+    height: 50px; /* Imposta l'altezza del cerchio */
+    display: flex;
+    justify-content: center;  /* Allinea il contenuto orizzontalmente */
+    align-items: center;      /* Allinea il contenuto verticalmente */
+}
+
+.play-pause:hover {
+    background-color: rgba(169, 169, 169, 0.8); /* Grigio più scuro al passaggio del mouse */
+}
+
+/* VERSIONE MOBILE - Carousel */
+@media (max-width: 650px) {
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .slide {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: none;
+    }
+
+    .slide.active {
+        display: block;
+    }
+
+    /* Frecce mobile - Posizione corretta */
+    .prev, .next {
+        top: 50%;  /* Centrato verticalmente */
+        transform: translateY(-50%);
+    }
+
+    /* Freccia sinistra alla sinistra */
+    .prev {
+        left: 0;  /* Posizionata al bordo sinistro */
+    }
+
+    /* Freccia destra alla destra */
+    .next {
+        right: 0; /* Posizionata al bordo destro */
+    }
+
+    /* Play/Pause come cerchio */
+    .play-pause {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(169, 169, 169, 0.5); /* Grigio trasparente */
+        color: white; /* Colore del testo bianco */
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%; /* Rende il bottone un cerchio */
+        width: 50px;  /* Imposta la larghezza del cerchio */
+        height: 50px; /* Imposta l'altezza del cerchio */
+        display: flex;
+        justify-content: center;  /* Allinea il contenuto orizzontalmente */
+        align-items: center;      /* Allinea il contenuto verticalmente */
+    }
+
+    .play-pause:hover {
+        background-color: rgba(169, 169, 169, 0.8); /* Grigio più scuro al passaggio del mouse */
+    }
+}
+
+/* VERSIONE DESKTOP - Carousel */
+@media (min-width: 651px) {
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .slide {
+        width: 30%;
+        height: 350px;
+        display: block;
+        opacity: 0.5;
+        transform: scale(0.9);
+        transition: all 0.5s ease;
+    }
+
+    .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+        z-index: 1;
+    }
+
+    /* Frecce versione desktop */
+    .prev, .next {
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(169, 169, 169, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px;  /* Posizionata a sinistra */
+    }
+
+    .next {
+        right: 10px; /* Posizionata a destra */
+    }
+}
