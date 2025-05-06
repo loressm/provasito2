@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css"> <!-- Aggiunto link al CSS dello slideshow -->
+
+    <!-- Font Awesome per l'icona del telefono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Carica prima header.js, poi script.js -->
+    <script src="header.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="slideshow/script-slider.js" defer></script>
+    <script src="footer.js" defer></script> <!-- JS per il footer -->
+</head>
+<body>
+    <!-- Header caricato dinamicamente -->
+    <div id="header-container"></div>
+
+    <!-- SLIDESHOW -->
+    <section class="slideshow-container">
+        <div class="slider" id="slider">
+            <img src="slideshow/immagine1.jpg" alt="Slide 1" class="slide active">
+            <img src="slideshow/immagine2.jpg" alt="Slide 2" class="slide">
+            <img src="slideshow/immagine3.jpg" alt="Slide 3" class="slide">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <button class="play-pause" id="playPauseBtn"><i class="fas fa-pause"></i></button>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="intro">
+            <h2>Sito in costruzione</h2>
+            <p>Modifiche in corso</p>
+        </section>
+    </main>
+
+    <!-- Footer caricato dinamicamente -->
+    <footer></footer>
+</body>
+</html>
