@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi - Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Caricamento di PapaParse prima di eventi.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="eventi/eventi.js" defer></script>  <!-- evento.js dopo PapaParse -->
+    
+    <!-- Aggiunta del file per l'Hamburger Menu -->
+    <script src="script.js" defer></script>  <!-- Aggiunto per gestire l'Hamburger Menu -->
+    
+    <!-- Font Awesome per l'icona del telefono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header aggiornato con nuovo menu -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Chi Siamo</a>
+                    <ul class="submenu">
+                        <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                        <li><a href="soci.html">Soci</a></li>
+                        <li><a href="produzioni.html">Produzioni</a></li>
+                        <li><a href="spazi.html">Spazi</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="calendario-eventi.html" class="active">Calendario Eventi</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Laboratori</a>
+                    <ul class="submenu">
+                        <li><a href="scuole.html">Per le scuole</a></li>
+                        <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                        <li><a href="adulti.html">Corsi per adulti</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Eventi</h2>
+            <p>Scopri gli eventi che ti interessano! Qui troverai tutti gli eventi filtrati in base ai tuoi criteri.</p>
+        </section>
+
+        <!-- Sezione per visualizzare gli eventi filtrati -->
+        <section id="eventi">
+            <h3>Eventi trovati:</h3>
+            <div id="events-list">
+                <!-- Gli eventi verranno visualizzati qui tramite JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer verrà caricato tramite JavaScript -->
+    <footer></footer>
+
+    <!-- Aggiungi il file JavaScript per il footer -->
+    <script src="footer.js"></script>
+</body>
+</html>
