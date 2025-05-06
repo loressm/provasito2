@@ -1,0 +1,19 @@
+/* Sottomenu - effetti di transizione */
+.production-details {
+    display: block; /* Assicurati che sia visibile inizialmente */
+    max-height: 0; /* Imposta un altezza massima 0 quando è nascosto */
+    overflow: hidden; /* Nasconde il contenuto che esce */
+    padding: 0 20px; /* Per mantenere un po' di spazio per il contenuto */
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.production-details.open {
+    max-height: 5000px; /* Imposta una max-height grande per garantire la visibilità */
+    padding-top: 10px; /* Aggiungi padding superiore per separare il contenuto */
+    padding-bottom: 20px; /* Aggiungi padding inferiore per separare il contenuto */
+}
+
+/* Opzionale: Rimuovi eventuali bordi indesiderati */
+.production-details {
+    border: none;
+}
