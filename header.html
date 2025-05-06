@@ -1,0 +1,177 @@
+<header>
+    <style>
+        /* Stili per l'header */
+        header {
+            background-color: #FFDD57;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            height: 80px; /* Modifica questa altezza per adattarla meglio */
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex: 1;
+        }
+
+        .logo img {
+            height: 100px; /* Altezza del logo */
+            width: auto;
+        }
+
+        nav {
+            position: absolute;
+            right: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            padding: 10px;
+        }
+
+        /* Submenu */
+        nav ul li ul.submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FFDD57;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            z-index: 999;
+            min-width: 200px;
+        }
+
+        nav ul li ul.submenu.open {
+            max-height: 500px;
+            padding: 10px 0;
+        }
+
+        nav ul li ul.submenu li {
+            margin: 0;
+        }
+
+        nav ul li ul.submenu li a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            white-space: nowrap;
+            color: #000;
+        }
+
+        nav ul li ul.submenu li a:hover {
+            background-color: #f1c40f;
+        }
+
+        /* Hamburger menu mobile */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            z-index: 1001;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hamburger div {
+            height: 5px;
+            background-color: #000;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg);
+            transform-origin: 5% 5%;
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg);
+            transform-origin: 5% 95%;
+        }
+    </style>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo Azienda">
+        </a>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <!-- Chi Siamo con sotto-menu -->
+            <li class="dropdown">
+                <a href="#">Chi Siamo</a>
+                <ul class="submenu">
+                    <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                    <li><a href="soci.html">Soci</a></li>
+                    <li><a href="produzioni.html">Produzioni</a></li>
+                    <li><a href="spazi.html">Spazi</a></li>
+                    <li><a href="trasparenza.html">Trasparenza</a></li>
+                </ul>
+            </li>
+
+            <!-- Calendario Eventi -->
+            <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+
+            <!-- Laboratori con sotto-menu -->
+            <li class="dropdown">
+                <a href="#">Laboratori</a>
+                <ul class="submenu">
+                    <li><a href="scuole.html">Per le scuole</a></li>
+                    <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                    <li><a href="adulti.html">Corsi per adulti</a></li>
+                </ul>
+            </li>
+
+            <!-- Assistenza tecnica -->
+            <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+
+            <!-- Contattaci -->
+            <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger menu mobile -->
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<!-- Carica script dopo l'inserimento dinamico dell'header -->
+<script src="script.js" defer></script>
