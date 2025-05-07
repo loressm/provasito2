@@ -1,0 +1,70 @@
+/* Stili specifici per la pagina degli spazi */
+.space-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.space {
+    padding: 15px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.space:hover {
+    background-color: #ddd;
+}
+
+.space-details {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.space-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.space-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border: 0;
+}
+
+/* Aggiungi uno spazio tra la descrizione e il bottone */
+.space-description {
+    margin-bottom: 20px; /* Aggiungi uno spazio tra la descrizione e il bottone */
+}
+
+.events-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.events-button:hover {
+    background-color: #0056b3;
+}
