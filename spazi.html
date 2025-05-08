@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I nostri spazi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Layout base -->
+    <link rel="stylesheet" href="spazi/spazi.css"> <!-- Stili specifici per la pagina spazi -->
+    <script src="script.js" defer></script>
+    <script src="spazi/spazi.js" defer></script> <!-- Script specifici per la pagina spazi -->
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <!-- Menu Chi Siamo -->
+                <li class="dropdown">
+                    <a href="#">Chi Siamo</a>
+                    <ul class="submenu">
+                        <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                        <li><a href="soci.html">Soci</a></li>
+                        <li><a href="produzioni.html">Produzioni</a></li>
+                        <li><a href="spazi.html" class="active">Spazi</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu Calendario Eventi -->
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+
+                <!-- Menu Laboratori -->
+                <li class="dropdown">
+                    <a href="#">Laboratori</a>
+                    <ul class="submenu">
+                        <li><a href="scuole.html">Per le scuole</a></li>
+                        <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                        <li><a href="adulti.html">Corsi per adulti</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu Assistenza tecnica -->
+                <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+
+                <!-- Menu Contattaci -->
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+            </ul>
+        </nav>
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Gli Spazi della Cooperativa</h2>
+            <p>Scopri gli spazi che gestiamo, ognuno con la sua storia e la sua unicità.</p>
+        </section>
+
+        <!-- Lista degli spazi -->
+        <div class="space-list">
+            <!-- Gli spazi saranno aggiunti dinamicamente tramite JavaScript -->
+        </div>
+    </main>
+
+    <!-- Overlay per oscurare lo sfondo -->
+    <div class="overlay" id="overlay">
+        <div class="space-details" id="space-details">
+            <!-- I dettagli dello spazio verranno inseriti dinamicamente da JavaScript -->
+            <button class="close-btn" onclick="closeSpaceDetails()">X</button>
+        </div>
+    </div>
+
+    <!-- Footer verrà caricato tramite JavaScript -->
+    <footer></footer>
+
+    <!-- Aggiungi il file JavaScript per il footer -->
+    <script src="footer.js"></script>
+</body>
+</html>
