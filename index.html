@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css">
+    <script src="script.js" defer></script>
+    <script src="slideshow/script-slider.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="footer.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Chi Siamo</a>
+                    <ul class="submenu">
+                        <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                        <li><a href="soci.html">Soci</a></li>
+                        <li><a href="produzioni.html">Produzioni</a></li>
+                        <li><a href="spazi.html">Spazi</a></li>
+                        <li><a href="trasparenza.html">Trasparenza</a></li>
+                    </ul>
+                </li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li class="dropdown">
+                    <a href="#">Laboratori</a>
+                    <ul class="submenu">
+                        <li><a href="scuole.html">Per le scuole</a></li>
+                        <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                        <li><a href="adulti.html">Corsi per adulti</a></li>
+                    </ul>
+                </li>
+                <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <section class="slideshow-container">
+        <div class="slider" id="slider">
+            <img src="slideshow/immagine1.jpg" alt="Slide 1" class="slide active">
+            <img src="slideshow/immagine2.jpg" alt="Slide 2" class="slide">
+            <img src="slideshow/immagine3.jpg" alt="Slide 3" class="slide">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <button class="play-pause" id="playPauseBtn"><i class="fas fa-pause"></i></button>
+    </section>
+
+    <main>
+        <section class="content-grid">
+            <!-- Cella 1 con titolo e testo -->
+            <div class="grid-item">
+                <h3>Chi siamo?</h3>
+                <p>Società Cooperativa specializzata in produzione teatrale, organizzazione eventi, assistenza tecnica agli spettacoli e non solo.</p>
+            </div>
+
+            <!-- Cella 2 con immagine -->
+            <div class="grid-item">
+                <img src="fotoprove.JPG" alt="Immagine Cooperativa">
+            </div>
+
+            <div class="grid-item">
+                <h3>Articolo 3</h3>
+                <p>Tutti i cittadini hanno pari dignità sociale e sono eguali davanti alla legge, senza distinzione di sesso, razza, lingua, religione, opinioni politiche...</p>
+            </div>
+            <div class="grid-item">
+                <h3>Articolo 4</h3>
+                <p>La Repubblica riconosce a tutti i cittadini il diritto al lavoro e promuove le condizioni che rendano effettivo questo diritto...</p>
+            </div>
+            <div class="grid-item">
+                <h3>Articolo 5</h3>
+                <p>La Repubblica, una e indivisibile, riconosce e promuove le autonomie locali; attua nei servizi che dipendono dallo Stato il più ampio decentramento amministrativo...</p>
+            </div>
+            <div class="grid-item">
+                <h3>Articolo 6</h3>
+                <p>La Repubblica tutela con apposite norme le minoranze linguistiche.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Articolo 7</h3>
+                <p>Lo Stato e la Chiesa cattolica sono, ciascuno nel proprio ordine, indipendenti e sovrani. I loro rapporti sono regolati dai Patti Lateranensi...</p>
+            </div>
+            <div class="grid-item">
+                <h3>Articolo 8</h3>
+                <p>Tutte le confessioni religiose sono egualmente libere davanti alla legge. Le confessioni diverse dalla cattolica hanno diritto di organizzarsi secondo i propri statuti...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="footer.js"></script>
+</body>
+</html>
