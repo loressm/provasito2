@@ -1,0 +1,327 @@
+/* Import dei font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap');
+
+/* Generale */
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #F1F8E9; /* Verde chiaro pastello per un'atmosfera rilassante */
+    color: #333333;
+}
+
+/* Header */
+header {
+    background-color: #FFEB3B; /* Giallo chiaro, allegro e ottimista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    position: relative;
+}
+
+header .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+header .logo img {
+    height: 100px;
+    width: auto;
+}
+
+nav {
+    position: absolute;
+    right: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    padding: 10px;
+}
+
+/* Icona telefono riflessa + animazione */
+.fa-phone-alt {
+    display: inline-block;
+    transform: scaleX(-1);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover .fa-phone-alt {
+    transform: scaleX(-1) scale(1.2);
+}
+
+/* Submenu */
+nav ul li ul.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFEB3B;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    min-width: 200px;
+    display: block;
+}
+
+nav ul li ul.submenu.open {
+    max-height: 500px;
+    padding: 10px 0;
+}
+
+nav ul li ul.submenu li {
+    margin: 0;
+    display: block;
+}
+
+nav ul li ul.submenu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    white-space: normal;
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #F44336; /* Corallo per un tocco di vivacità */
+}
+
+/* Main */
+main {
+    padding: 20px;
+    background-color: #FFFFFF; /* Bianco per creare contrasto con il resto del sito */
+    flex-grow: 1;
+    color: #333;
+}
+
+/* Griglia con colori allegri e angoli arrotondati */
+.grid-item {
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.grid-item:nth-child(6n+1) {
+    background-color: #B2EBF2; /* Turchese chiaro, fresco e tranquillo */
+}
+
+.grid-item:nth-child(6n+2) {
+    background-color: #FFCDD2; /* Corallo chiaro, vivace e caloroso */
+}
+
+.grid-item:nth-child(6n+3) {
+    background-color: #81C784; /* Verde menta, fresco e naturale */
+}
+
+.grid-item:nth-child(6n+4) {
+    background-color: #D1C4E9; /* Lavanda chiara, rilassante */
+}
+
+.grid-item:nth-child(6n+5) {
+    background-color: #FFF9C4; /* Giallo molto chiaro, allegro e positivo */
+}
+
+.grid-item:nth-child(6n) {
+    background-color: #F8BBD0; /* Rosa tenue, delicato e accogliente */
+}
+
+/* Footer */
+footer {
+    background-color: #FFEB3B; /* Giallo chiaro, per un richiamo al header */
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Social media links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Navbar */
+@media (max-width: 1280px) {
+    header {
+        height: 70px;
+    }
+
+    header .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header .logo img {
+        height: 100px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #FFEB3B;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: top 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+        padding: 60px 20px 20px;
+        box-sizing: border-box;
+    }
+
+    nav ul.active {
+        top: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 24px;
+    }
+
+    nav ul li ul.submenu {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        min-width: unset;
+    }
+
+    nav ul li ul.submenu li a {
+        font-size: 20px;
+        padding: 8px 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        z-index: 1001;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .hamburger div {
+        height: 5px;
+        background-color: #333;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: 5% 5%;
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: 5% 95%;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .map-container {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 200px;
+        border: 0;
+    }
+}
+
+/* Griglia - Desktop version (2 colonne) */
+@media (min-width: 1281px) {
+    .content-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
