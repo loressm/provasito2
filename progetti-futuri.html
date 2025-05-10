@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti Futuri - Nome Cooperativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progettifuturi/progettifuturi.css">
+    <script src="script.js" defer></script>
+    <script src="progettifuturi/progettifuturi.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Cooperativa">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Chi Siamo</a>
+                    <ul class="submenu">
+                        <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                        <li><a href="soci.html">Soci</a></li>
+                        <li><a href="produzioni.html">Produzioni</a></li>
+                        <li><a href="spazi.html">Spazi</a></li>
+                    </ul>
+                </li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li class="dropdown">
+                    <a href="#">Laboratori</a>
+                    <ul class="submenu">
+                        <li><a href="scuole.html">Per le scuole</a></li>
+                        <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                        <li><a href="adulti.html">Corsi per adulti</a></li>
+                    </ul>
+                </li>
+                <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Progetti Futuri</h2>
+            <p>La nostra cooperativa guarda al futuro con entusiasmo. Ecco alcuni dei progetti che stiamo sviluppando per i prossimi mesi.</p>
+        </section>
+
+        <!-- Sezione Progetti come griglia -->
+        <section class="griglia-progetti">
+            <!-- Cella 1: Descrizione e immagine progetto -->
+            <div class="cella">
+                <div class="progetto-sinistra">
+                    <h3>Comunità Energetica Rinnovabile (CER)</h3>
+                    <p>
+                        Stiamo realizzando una CER (Comunità Energetica Rinnovabile) che produrrà 1000 kWh all’anno sul tetto del cinema teatro Busnelli a Dueville (VI).
+                        <a href="progettofotovoltaico.html" class="btn-scopri">Scopri di più</a>
+                    </p>
+                </div>
+                <div class="progetto-immagine">
+                    <img src="progettifuturi/progettofotovoltaico.JPG" alt="Progetto Fotovoltaico">
+                </div>
+            </div>
+
+            <!-- Cella 2: Stato di avanzamento -->
+            <div class="cella">
+                <div class="progetto-destra">
+                    <h3>Stato di Avanzamento</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="progress-number">0%</div> <!-- Numero percentuale -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="footer.js"></script>
+</body>
+</html>
