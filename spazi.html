@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I nostri spazi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="spazi/spazi.css">
+    <script src="script.js" defer></script>
+    <script src="spazi/spazi.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="header.js" defer></script>  <!-- Aggiunto JS per caricare l'header dinamico -->
+    <script src="footer.js" defer></script>  <!-- Aggiunto JS per caricare il footer dinamico -->
+</head>
+
+<body>
+    <!-- Header dinamico -->
+    <header id="header"></header>  <!-- Caricamento dinamico tramite JS -->
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Gli Spazi della Cooperativa</h2>
+            <p>Scopri gli spazi che gestiamo, ognuno con la sua storia e la sua unicità.</p>
+        </section>
+
+        <!-- Lista degli spazi -->
+        <div class="space-list" id="space-list">
+            <!-- Gli spazi verranno aggiunti dinamicamente da spazi.js -->
+        </div>
+    </main>
+
+    <!-- Overlay per dettagli spazio -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <!-- La X e i dettagli saranno aggiunti via JavaScript -->
+            <div id="overlay-details" class="overlay-details"></div>
+        </div>
+    </div>
+
+    <!-- Footer dinamico -->
+    <footer id="footer"></footer>  <!-- Caricamento dinamico tramite JS -->
+</body>
+</html>
