@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti Futuri - Nome Cooperativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+</head>
+<body>
+    <!-- Header dinamico -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Progetti Futuri</h2>
+            <p>La nostra cooperativa guarda al futuro con entusiasmo. Ecco alcuni dei progetti che stiamo sviluppando per i prossimi mesi.</p>
+        </section>
+
+        <!-- Sezione Progetti come griglia -->
+        <section class="griglia-progetti">
+            <!-- Cella 1: Descrizione e immagine progetto -->
+            <div class="cella">
+                <div class="progetto-sinistra">
+                    <h3>Comunità Energetica Rinnovabile (CER)</h3>
+                    <p>
+                        Stiamo realizzando una CER (Comunità Energetica Rinnovabile) che produrrà 1000 kWh all’anno sul tetto del cinema teatro Busnelli a Dueville (VI).
+                        <a href="progettofotovoltaico.html" class="btn-scopri">Scopri di più</a>
+                    </p>
+                </div>
+                <div class="progetto-immagine">
+                    <img src="progettifuturi/progettofotovoltaico.JPG" alt="Progetto Fotovoltaico">
+                </div>
+            </div>
+
+            <!-- Cella 2: Stato di avanzamento -->
+            <div class="cella">
+                <div class="progetto-destra">
+                    <h3>Stato di Avanzamento</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="progress-number">0%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer dinamico -->
+    <footer></footer>
+    <script src="footer.js"></script>
+
+    <!-- Script per l'animazione della progress bar -->
+    <script>
+    // Funzione per animare la progress bar
+    function animateProgressBar() {
+        const progress = document.querySelector('.progress');
+        const number = document.querySelector('.progress-number');
+        const targetPercent = 10; // Percentuale finale (10%)
+
+        let currentPercent = 0; // Iniziamo da 0
+        const interval = setInterval(function() {
+            if (currentPercent <= targetPercent) {
+                progress.style.width = currentPercent + '%';  // Aggiorna la larghezza della barra
+                number.textContent = currentPercent + '%';  // Aggiorna il numero
+                currentPercent++; // Incrementa la percentuale
+            } else {
+                clearInterval(interval); // Quando la percentuale raggiunge il target, fermiamo l'animazione
+            }
+        }, 50); // 50 ms per ogni incremento
+    }
+
+    // Crea l'observer per rilevare quando la progress bar è visibile
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Se la progress bar è visibile, avvia l'animazione
+                animateProgressBar();
+                // Ferma l'observer dopo aver avviato l'animazione
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 }); // L'animazione parte quando il 50% dell'elemento è visibile
+
+    // Osserva la progress bar
+    const progressContainer = document.querySelector('.progress-container');
+    observer.observe(progressContainer);
+    </script>
+</body>
+</html>
