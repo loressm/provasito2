@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="script.js" defer></script>
+    <script src="slideshow/script-slider.js" defer></script>
+    <script src="footer.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo Azienda">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Chi Siamo</a>
+                    <ul class="submenu">
+                        <li><a href="la-cooperativa.html">La Cooperativa</a></li>
+                        <li><a href="soci.html">Soci</a></li>
+                        <li><a href="produzioni.html">Produzioni</a></li>
+                        <li><a href="spazi.html">Spazi</a></li>
+                        <li><a href="trasparenza.html">Trasparenza</a></li>
+                    </ul>
+                </li>
+                <li><a href="calendario-eventi.html">Calendario Eventi</a></li>
+                <li class="dropdown">
+                    <a href="#">Laboratori</a>
+                    <ul class="submenu">
+                        <li><a href="scuole.html">Per le scuole</a></li>
+                        <li><a href="bambini.html">Corsi di teatro per bambini</a></li>
+                        <li><a href="adulti.html">Corsi per adulti</a></li>
+                    </ul>
+                </li>
+                <li><a href="assistenza-tecnica.html">Assistenza tecnica</a></li>
+                <li><a href="progetti-futuri.html">Progetti futuri</a></li>
+                <li><a href="contattaci.html">Contattaci <i class="fas fa-phone-alt"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <section class="slideshow-container">
+        <div class="slider" id="slider">
+            <img src="slideshow/immagine1.jpg" alt="Slide 1" class="slide active">
+            <img src="slideshow/immagine2.jpg" alt="Slide 2" class="slide">
+            <img src="slideshow/immagine3.jpg" alt="Slide 3" class="slide">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <button class="play-pause" id="playPauseBtn"><i class="fas fa-pause"></i></button>
+    </section>
+
+    <main>
+        <section class="content-grid">
+            <!-- Cella 1 con animazione -->
+            <div class="grid-item animate-on-scroll">
+                <h3>Chi siamo?</h3>
+                <p><strong>Dedalofurioso</strong> è una Cooperativa di <strong>artisti</strong>, <strong>formatori</strong>, e <strong>tecnici</strong>, impegnati nella continua <strong>ricerca artistica e culturale</strong> e nella promozione di <strong>spettacoli</strong>, eventi e laboratori artistici. Siamo attivi dal <strong>2003</strong> e contiamo <strong>35 dipendenti</strong>, di cui <strong>20 soci</strong>.</p>
+            </div>
+
+            <!-- Cella 2 con immagine con animazione -->
+            <div class="grid-item">
+                <img src="fotoprove.JPG" alt="Immagine Cooperativa" class="animate-from-bottom">
+            </div>
+
+            <!-- Cella 3 con titolo e testo -->
+            <div class="grid-item animate-from-right">
+                <h3>Vision</h3>
+                <p><strong>Dedalofurioso</strong> crede nel valore della <strong>formazione artistica e culturale</strong> come strumento di crescita personale e sociale. Promuove lo <strong>spettacolo dal vivo</strong> come un'esperienza unica, capace di <strong>condividere emozioni</strong> e riflessioni. Il <strong>teatro</strong> è un'arte dinamica, capace di raccontare storie, affrontare temi complessi e, soprattutto, di <strong>emozionare</strong> e far riflettere il pubblico. Partecipare a uno spettacolo teatrale aiuta a rafforzare un senso di <strong>comunità</strong> e ad aprire la mente a nuove prospettive.</p>
+            </div>
+
+            <!-- Cella 4 con immagine con animazione da su a giù -->
+            <div class="grid-item">
+                <img src="fotovision.JPG" alt="Immagine Vision" class="animate-from-top">
+            </div>
+
+            <!-- Cella 5 con titolo e testo -->
+            <div class="grid-item animate-on-scroll">
+                <h3>Mission</h3>
+                <p><strong>Dedalofurioso</strong> è una cooperativa che si occupa di <strong>produzione</strong>, <strong>distribuzione</strong>, <strong>service tecnico</strong> e organizzazione di <strong>spettacoli dal vivo</strong> e riprodotti. Organizza eventi e rassegne che utilizzano i linguaggi delle <strong>arti performative</strong> e offre i propri servizi per lo sviluppo e la promozione della cultura e delle <strong>arti</strong> a servizio della <strong>Comunità Locale</strong>. L’obiettivo è diventare un <strong>punto di riferimento</strong> per lo spettacolo dal vivo, con un focus sul pubblico della <strong>Comunità Locale</strong>, in particolare le <strong>famiglie</strong>.</p>
+            </div>
+
+            <!-- Cella 6 con immagine con animazione -->
+            <div class="grid-item animate-from-bottom">
+                <img src="fotomission.JPG" alt="Immagine Mission">
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        // Animazione scroll da giù verso su per l'immagine
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll('.animate-from-bottom');
+
+            // Creiamo un IntersectionObserver
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Aggiungi la classe per attivare l'animazione
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Ferma il monitoraggio dopo l'animazione
+                    }
+                });
+            }, {
+                threshold: 0.3 // La soglia indica che almeno il 30% dell'elemento deve essere visibile per scattare l'animazione
+            });
+
+            // Osserva tutte le immagini che devono essere animate
+            images.forEach(img => observer.observe(img));
+        });
+    </script>
+</body>
+</html>
