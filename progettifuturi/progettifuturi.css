@@ -1,0 +1,158 @@
+/* Stili base per la pagina */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenuto principale */
+main {
+    padding: 20px;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Griglia per i progetti */
+.griglia-progetti {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%; /* Assicura che la griglia occupi tutta la larghezza */
+}
+
+/* Cella - Descrizione e immagine progetto */
+.cella {
+    display: flex;
+    flex-direction: column; /* Imposta la cella in verticale */
+    flex: 1; /* Ogni cella occupa la stessa larghezza */
+    min-height: 300px; /* Imposta un'altezza minima per le celle */
+}
+
+/* Cella 1 - Descrizione progetto e immagine */
+.progetto-sinistra {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.progetto-sinistra h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.progetto-sinistra p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Cella - Immagine progetto */
+.progetto-immagine {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.progetto-immagine img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Cella 2 - Stato di avanzamento con sfondo bianco */
+.progetto-destra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* Sfondo bianco per la cella 2 */
+    padding: 20px;
+    flex: 1; /* Fa in modo che questa cella occupi lo stesso spazio della cella 1 */
+}
+
+.progetto-destra h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Contenitore per la progress bar e il numero */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Barra di avanzamento */
+.progress-bar {
+    width: 100%; /* La barra di avanzamento occupa tutta la larghezza della cella */
+    background-color: #ddd;
+    height: 25px;
+    border-radius: 5px;
+    margin: 20px 0; /* Centra la barra orizzontalmente */
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Numero percentuale */
+.progress-number {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Stile per il bottone "Scopri di più" */
+.btn-scopri {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-scopri:hover {
+    background-color: #45a049;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+    .griglia-progetti {
+        flex-direction: column; /* Passa a una colonna per schermi piccoli */
+    }
+
+    .cella {
+        min-height: auto; /* Rimuove l'altezza minima per le celle in mobile */
+    }
+
+    .progetto-immagine {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .progress-bar {
+        height: 20px;
+    }
+
+    .btn-scopri {
+        padding: 8px 16px;
+    }
+}
