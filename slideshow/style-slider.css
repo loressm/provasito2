@@ -1,0 +1,173 @@
+.slideshow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.slideshow-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 400px; /* Altezza fissa per il contenitore per evitare ritagli */
+    max-height: 400px; /* Impostiamo un limite per evitare che l'altezza superi il valore desiderato */
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide {
+    width: 100%;
+    height: 100%; /* Impostiamo l'altezza al 100% del contenitore */
+    flex-shrink: 0;
+    object-fit: contain; /* Cambiato per non ritagliare l'immagine */
+    display: none;
+    max-width: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.play-pause {
+    position: absolute;
+    bottom: 2px;  /* Margine di 2px dal bordo inferiore */
+    right: 10px;
+    background-color: rgba(169, 169, 169, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;  /* Ridotto a metà */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 25px;   /* Ridotto a metà */
+    height: 25px;  /* Ridotto a metà */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-pause:hover {
+    background-color: rgba(169, 169, 169, 0.8);
+}
+
+.prev, .next {
+    background-color: rgba(169, 169, 169, 0.5);
+    color: white;
+    border: none;
+    padding: 7px;   /* Ridotto a metà */
+    cursor: pointer;
+    z-index: 20;
+    font-size: 12px; /* Ridotto a metà */
+}
+
+.slide-text {
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    font-size: 16px;
+    max-height: 100%; /* Assicura che il blocco del testo non superi l'altezza dell'immagine */
+    overflow: hidden; /* Se il testo è troppo lungo, nasconde il resto */
+}
+
+/* --- DESKTOP --- */
+@media (min-width: 801px) {
+    .slideshow-layout {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .slide-text {
+        width: 50%;
+        padding: 20px; /* Ridotto per rendere il blocco di testo meno alto */
+        text-align: left;
+        font-size: 40px; /* Ridotto per adattarsi meglio */
+        max-height: 100%; /* Limita l'altezza del blocco di testo alla stessa altezza dell'immagine */
+    }
+
+    .slideshow-container {
+        width: 50%;
+    }
+
+    .prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .next {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 800px) {
+    .slide-text {
+        order: 2;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .slideshow-container {
+        order: 1;
+    }
+
+    .slideshow-layout {
+        flex-direction: column;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .play-pause {
+        position: absolute;
+        bottom: 2px;
+        right: 10px;
+        background-color: rgba(169, 169, 169, 0.5);
+        color: white;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
