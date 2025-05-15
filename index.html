@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="script.js" defer></script>
+    <script src="slideshow/script-slider.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="header.js" defer></script>
+</head>
+<body>
+    <header id="header"></header>
+
+    <section class="slideshow-wrapper">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+        <div class="slideshow-layout">
+            <div class="slide-text" id="slideText"></div>
+            <div class="slideshow-container">
+                <div class="slider" id="slider"></div>
+                <button class="play-pause" id="playPauseBtn"><i class="fas fa-pause"></i></button>
+            </div>
+        </div>
+
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <main>
+        <section class="content-grid">
+            <!-- Blocco 1: Testo (da sinistra) -->
+            <div class="grid-item animate-on-scroll">
+                <h3>Chi siamo?</h3>
+                <p><strong>Dedalofurioso</strong> è una Cooperativa di <strong>artisti</strong>, <strong>formatori</strong>, e <strong>tecnici</strong>, impegnati nella continua <strong>ricerca artistica e culturale</strong> e nella promozione di <strong>spettacoli</strong>, eventi e laboratori artistici. Siamo attivi dal <strong>2003</strong> e contiamo <strong>35 dipendenti</strong>, di cui <strong>20 soci</strong>.</p>
+            </div>
+
+            <!-- Blocco 2: Immagine (da destra, FIXED) -->
+            <div class="grid-item">
+                <img src="fotoprove.JPG" alt="Immagine Cooperativa">
+            </div>
+
+            <!-- Blocco 3: Testo (da sinistra) -->
+            <div class="grid-item animate-on-scroll">
+                <h3>Vision</h3>
+                <p><strong>Dedalofurioso</strong> crede nel valore della <strong>formazione artistica e culturale</strong> come strumento di <strong>crescita personale</strong> e <strong>sociale</strong>. Promuoviamo lo <strong>spettacolo dal vivo</strong> come un'esperienza <strong>visiva e sonora</strong> unica, capace di suscitare emozioni e stimolare riflessioni.</p>
+                <p>Il <strong>teatro</strong> è un'arte <strong>versatile e dinamica</strong>, che racconta storie, affronta <strong>temi complessi</strong> e, soprattutto, emoziona e fa riflettere. Partecipare a uno spettacolo teatrale è un'opportunità per <strong>condividere emozioni</strong> e <strong>riflessioni</strong>, rafforzando un senso di <strong>comunità</strong> e aprendo la mente a nuove <strong>prospettive</strong>.</p>
+            </div>
+
+            <!-- Blocco 4: Immagine (da destra) -->
+            <div class="grid-item">
+                <img src="fotovision.JPG" alt="Immagine Vision">
+            </div>
+
+            <!-- Blocco 5: Testo (da sinistra) -->
+            <div class="grid-item animate-on-scroll">
+                <h3>Mission</h3>
+                <p><strong>Dedalofurioso</strong> è una cooperativa che si occupa di <strong>produzione</strong>, <strong>distribuzione</strong>, <strong>service tecnico</strong> e organizzazione di <strong>spettacoli dal vivo</strong> e riprodotti. Organizza eventi e rassegne che esplorano i diversi <strong>linguaggi delle arti performative</strong> e offre servizi per lo <strong>sviluppo e la promozione della cultura</strong>, a servizio della <strong>Comunità Locale</strong>.</p>
+                <p>Il nostro obiettivo è produrre e realizzare <strong>spettacoli dal vivo</strong> che utilizzano le forme e i linguaggi del <strong>contemporaneo</strong>, a supporto di teatri, scuole, enti e imprese. Vogliamo diventare un <strong>punto di riferimento</strong> per la proposta di <strong>spettacolo dal vivo</strong> nel nostro territorio.</p>
+                <p>Il nostro pubblico principale è la <strong>Comunità Locale</strong>, con un'attenzione speciale verso le <strong>famiglie</strong>.</p>
+            </div>
+
+            <!-- Blocco 6: Immagine (da destra) -->
+            <div class="grid-item">
+                <img src="fotomission.JPG" alt="Immagine Mission">
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.animate-on-scroll, .animate-from-right, .animate-from-bottom, .animate-from-top');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5  <!-- Modifica la soglia a 0.5 -->
+            });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
