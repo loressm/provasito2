@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sito Azienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Carica Playfair Display e Roboto -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slideshow/style-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="slideshow/script-slider.js" defer></script>
+    <script src="footer.js" defer></script>
+    <script src="header.js" defer></script>  <!-- Aggiunto il JS per caricare l'header -->
+</head>
+<body>
+    <header id="header"></header> <!-- Header vuoto, caricato dinamicamente -->
+
+    <!-- Sezione Slideshow -->
+    <section class="slideshow-wrapper">
+        <button class="prev">&#10094;</button>
+
+        <div class="slideshow-layout">
+            <div class="slide-text" id="slideText">
+                <!-- Testo dinamico qui -->
+            </div>
+            <div class="slideshow-container">
+                <div class="slider" id="slider">
+                    <!-- Le immagini verranno caricate dinamicamente -->
+                </div>
+                <button class="play-pause" id="playPauseBtn"><i class="fas fa-pause"></i></button>
+            </div>
+        </div>
+
+        <button class="next">&#10095;</button>
+    </section>
+
+    <main>
+        <!-- Il resto del contenuto della pagina -->
+    </main>
+
+    <footer></footer>
+
+    <script>
+        // Animazione scroll da giù verso su per l'immagine
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll('.animate-from-bottom');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                threshold: 0.3 
+            });
+
+            images.forEach(img => observer.observe(img));
+        });
+    </script>
+</body>
+</html>
