@@ -1,0 +1,194 @@
+/* Slideshow Wrapper */
+.slideshow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+/* Layout della slideshow */
+.slideshow-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Contenitore della slideshow */
+.slideshow-container {
+    aspect-ratio: 16 / 9;  /* Imposta un rapporto fisso 16:9 */
+    height: auto;          /* Altezza automatica in base al rapporto */
+    max-height: 100vh;     /* Non supera l'altezza dello schermo */
+    background-color: black; /* Sfondo nero per evitare bordi vuoti */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slider: Contenitore delle immagini */
+.slider {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Singola slide */
+.slide {
+    width: 100%;
+    height: 100%;         /* Altezza fissa in base al rapporto */
+    flex-shrink: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Slide attiva */
+.slide.active {
+    display: block;
+}
+
+/* Immagini dentro la slide */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene l'intera immagine visibile senza deformarla */
+}
+
+/* Pulsante Play/Pause */
+.play-pause {
+    position: absolute;
+    bottom: 2px;  /* Margine di 2px dal bordo inferiore */
+    right: 10px;
+    background-color: rgba(169, 169, 169, 0.5);
+    color: white;
+    border: none;
+    padding: 5px;  /* Ridotto il padding */
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 33px;  /* Ridotto la larghezza */
+    height: 33px; /* Ridotto l'altezza */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;  /* Ridotto la dimensione del font */
+}
+
+.play-pause:hover {
+    background-color: rgba(169, 169, 169, 0.8);
+}
+
+/* Pulsante Precedente/Successivo */
+.prev, .next {
+    background-color: rgba(169, 169, 169, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;  /* Ridotto il padding */
+    cursor: pointer;
+    z-index: 20;
+    font-size: 16px;  /* Ridotto la dimensione del font */
+}
+
+/* Testo della slide */
+.slide-text {
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    font-size: 16px;
+}
+
+/* --- DESKTOP --- */
+@media (min-width: 801px) {
+    .slideshow-layout {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .slide-text {
+        width: 50%;
+        padding: 40px;
+        text-align: left;
+        font-size: 60px; /* Aumento della dimensione del testo per desktop */
+    }
+
+    .slideshow-container {
+        width: 50%;
+    }
+
+    .prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .next {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 800px) {
+    .slide-text {
+        order: 2;
+        padding: 20px;
+        font-size: 16px; /* Dimensione del testo per dispositivi mobili */
+    }
+
+    .slideshow-container {
+        order: 1;
+    }
+
+    .slideshow-layout {
+        flex-direction: column;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Posizionamento del tasto play/pause più in basso a destra, con margine di 2px dal bordo inferiore */
+    .play-pause {
+        position: absolute;
+        bottom: 2px;  /* Margine di 2px dal bordo inferiore */
+        right: 10px;
+        background-color: rgba(169, 169, 169, 0.5);
+        color: white;
+        border: none;
+        padding: 5px;  /* Ridotto il padding */
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 33px;  /* Ridotto la larghezza */
+        height: 33px; /* Ridotto l'altezza */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;  /* Ridotto la dimensione del font */
+    }
+
+    /* Responsività delle immagini */
+    .slide img {
+        width: 100%;       /* Imposta la larghezza al 100% del contenitore */
+        height: 100%;      /* Imposta l'altezza al 100% */
+        object-fit: contain;  /* Mantiene l'intera immagine visibile senza tagliare */
+    }
+}
